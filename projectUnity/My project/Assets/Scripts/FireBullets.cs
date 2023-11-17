@@ -14,7 +14,7 @@ public class CombinedFire : MonoBehaviour
     private ShootingPattern currentPattern = ShootingPattern.Linear;
 
     [SerializeField]
-    private int bulletsAmount = 3;
+    private int bulletsAmount = 5;
 
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
@@ -51,28 +51,6 @@ public class CombinedFire : MonoBehaviour
         }
     }
 
-    private void FireSecondPattern()
-    {
-        float angleStep = (endAngle - startAngle) / bulletsAmount;
-        float currentAngle = startAngle;
-
-        for (int i = 0; i < bulletsAmount; i++)
-        {
-            float bulDirX = transform.position.x + Mathf.Sin((currentAngle * Mathf.PI) / 180f);
-            float bulDirZ = transform.position.z + Mathf.Cos((currentAngle * Mathf.PI) / 180f);
-            float bulDirY = 1f;
-
-            Vector3 bulMoveVector = new Vector3(bulDirX, transform.position.y, bulDirZ);
-            Vector2 bulDir = (bulMoveVector - transform.position).normalized;
-
-            GameObject bul = BulletPool.Instance.GetBullet();
-            bul.transform.position = transform.position;
-            bul.transform.rotation = transform.rotation;
-            bul.SetActive(true);
-            bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
-            currentAngle += angleStep;
-        }
-    }
 
     private void FireFourLinesPattern()
     {
@@ -104,7 +82,23 @@ public class CombinedFire : MonoBehaviour
         }
     }
 
+    private void FireSecondPattern()
+    {
+            float bulDirX = transform.position.x + Mathf.Sin(angle * Mathf.Deg2Rad);
+            float bulDirY = transform.position.y;
+            float bulDirZ = transform.position.z + Mathf.Cos(angle * Mathf.Deg2Rad);
 
+            Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, bulDirZ);
+            Vector3 bulDir = new Vector3(Mathf.Sin(angle * Mathf.Deg2Rad), 0f, Mathf.Cos(angle * Mathf.Deg2Rad)).normalized;
+
+            GameObject bul = BulletPool.Instance.GetBullet();
+            bul.transform.position = transform.position;
+            bul.transform.rotation = Quaternion.LookRotation(bulDir); // Use LookRotation to orient the bullet in the specified direction
+            bul.SetActive(true);
+            bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+
+            angle -= 10f;
+    }
 
 
     private void FireFisrtPattern()

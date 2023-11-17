@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e1838828f874c4cab92a1bfbcc6533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsAmount: 10
+  bulletsAmount: 20
   startAngle: 0
   endAngle: 360
 --- !u!114 &209718617
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209718610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292e8777dc4a54a52a6bddffc4032df0, type: 3}
   m_Name: 
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7b67cbe4e9b4917bbc4eb84967e336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsAmount: 3
+  bulletsAmount: 10
   startAngle: 0
   endAngle: 360
 --- !u!1001 &446374388
@@ -1354,7 +1354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 820, y: -350}
+  m_AnchoredPosition: {x: 850, y: -370}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &820661677
@@ -2021,7 +2021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 86e8b97b6d8d3465d851b89623a7dee3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 11.33
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 86e8b97b6d8d3465d851b89623a7dee3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2029,7 +2029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 86e8b97b6d8d3465d851b89623a7dee3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.41
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 86e8b97b6d8d3465d851b89623a7dee3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2295,7 +2295,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114520166}
   serializedVersion: 4
-  m_Mass: 100000000
+  m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2331,8 +2331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e12d0dda00744e88b1652ea493966c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 17
-  turnSpeed: 60
+  speed: 12
+  turnSpeed: 80
   horizontalInput: 0
   forwardInput: 0
 --- !u!114 &2114520176

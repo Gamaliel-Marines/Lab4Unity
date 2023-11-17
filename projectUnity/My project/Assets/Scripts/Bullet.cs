@@ -10,12 +10,12 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("Destroy", 2f);
+        Invoke("Destroy", 3f);
     }
 
     void Start()
     {
-        moveSpeed = 15f;
+        moveSpeed = 10f;
     }
 
     void Update()
